@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
+    <script defer type="module" src="js/controller.js"></script>
     <title>Weather App</title>
   </head>
   <body class="pt-0 mt-0">
     <!-- Homepage -->
-    <section id="homepage" class="flex flex-col justify-center">
+    <section id="homepage" class="hidden flex flex-col justify-center">
       <div
         class="container flex flex-col items-center space-y-10 mx-auto bg-lightLavender h-2/5 w-1/3 rounded-xl p-16 shadow-2xl md:h-1/2"
       >
-        <form id="#search" class="flex flex-col space-y-10 items-center">
+        <form id="form" class="flex flex-col space-y-10 items-center">
           <div
             class="text-deepPlum text-nowrap font-sans font-bold md:text-3xl"
           >
@@ -20,6 +21,7 @@
           </div>
           <input
             type="text"
+            id="search"
             placeholder="Desired City"
             class="rounded-sm bg-coolGray h-12 w-36 text-lg text-center text-charcoalGray md:mt-10 md:rounded-3xl md:w-60 lg:w-96"
           />
@@ -33,13 +35,15 @@
       </div>
     </section>
     <!-- Result page -->
-    <section id="result" class="hidden">
+    <section id="result" class="">
       <!-- Top Bar -->
-      <div
-        class="top-bar mx-auto flex flex-row w-screen items-center justify-center space-x-6 h-24 md:space-x-12"
+      <form
+        id="form2"
+        class="top-bar mx-auto flex flex-row w-screen items-center justify-center space-x-6 h-24 mb-5 md:space-x-12"
       >
         <input
           type="text"
+          id="topSearch"
           placeholder="Desired City"
           class="rounded-xl bg-coolGray h-12 w-36 text-lg text-center text-charcoalGray md:rounded-3xl md:w-60 lg:w-96"
         />
@@ -49,24 +53,32 @@
         >
           Submit
         </button>
-      </div>
+      </form>
 
       <!-- Weather display -->
       <div
         class="container flex flex-col items-center justify-between bg-charcoalGray mx-auto w-1/2 p-5 rounded-xl shadow-2xl space-y-12"
       >
         <!--  Image -->
-        <div class="flex flex-col space-y-5 items-center justify-center">
+        <div
+          class="flex flex-col space-y-2 md:space-y-5 items-center justify-center"
+        >
           <!-- Weather stats -->
-          <img src="images/sunny.svg" alt="sunny" class="w-60" />
-          <div class="flex flex-col items-center justify-center space-y-2">
-            <h1 class="text-7xl text-white">39°</h1>
-            <div class="text-md text-lightPeach text-softPeach">
+          <img src="images/sunny.svg" alt="sunny" class="md:w-60" />
+          <div
+            class="flex flex-col items-center justify-center space-y-0 space-y-2"
+          >
+            <h1 class="text-3xl md:text-7xl text-white">39°</h1>
+            <div class="text-sm md:text-md text-lightPeach text-softPeach">
               Preceptations
             </div>
             <div class="flex flex-row items-center justify-between space-x-12">
-              <p class="text-md text-white text-softPeach">Max: 20°</p>
-              <p class="text-md text-white text-softPeach">Min: 10°</p>
+              <p class="text-sm md:text-md text-white text-softPeach">
+                Max: 20°
+              </p>
+              <p class="text-sm md:text-md text-white text-softPeach">
+                Min: 10°
+              </p>
             </div>
           </div>
         </div>
@@ -74,13 +86,15 @@
         <div
           class="container flex flex-col space-y-10 items-center bg-coolGray"
         >
-          <h1 class="text-xl text-darkPurple font-bold">Other days</h1>
+          <h1 class="text-lg md:text-xl text-darkPurple font-bold">
+            Other days
+          </h1>
           <div class="container flex flex-row items-center justify-between">
-            <img src="images/sunny.svg" alt="" class="w-10" />
-            <img src="images/sunny.svg" alt="" class="w-10" />
-            <img src="images/sunny.svg" alt="" class="w-10" />
-            <img src="images/sunny.svg" alt="" class="w-10" />
-            <img src="images/sunny.svg" alt="" class="w-10" />
+            <img src="images/sunny.svg" alt="" class="w-7 md:w-10" />
+            <img src="images/sunny.svg" alt="" class="w-7 md:w-10" />
+            <img src="images/sunny.svg" alt="" class="w-7 md:w-10" />
+            <img src="images/sunny.svg" alt="" class="w-7 md:w-10" />
+            <img src="images/sunny.svg" alt="" class="w-7 md:w-10" />
           </div>
         </div>
       </div>
