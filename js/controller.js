@@ -5,8 +5,9 @@ async function getQuery() {
   try {
     const query = view.returnQuery();
     if (!query) return;
+
     await model.setWeather(query);
-    console.log(model.weather);
+    view.renderWeather(model.weather);
   } catch (err) {
     console.log(err);
   }
