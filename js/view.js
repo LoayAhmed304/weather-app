@@ -8,6 +8,9 @@ class View {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         fn();
+        document.getElementById("homepage").classList.add("hidden");
+        document.getElementById("form2").classList.remove("hidden");
+        document.getElementById("result").classList.remove("hidden");
       })
     );
   }
