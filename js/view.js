@@ -53,14 +53,15 @@ class View {
             <p>Preceptations</p>
             <div class="flex flex-row items-center justify-between space-x-12">
             <p class="text-sm md:text-md text-white text-softPeach">
-            Max: ${data.tempMax}°
+              Max: ${data.tempMax}°
             </p>
             <p class="text-sm md:text-md text-white text-softPeach">
-            Min: ${data.tempMin}°
+              Min: ${data.tempMin}°
             </p>
             </div>
           </div>
         </div> 
+      </div>
       </div>
     </div>
         `;
